@@ -1,0 +1,123 @@
+
+
+/* 文件分类样式 */
+.category {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  padding: 5px 10px;
+  border-bottom: 1rpx solid #eee;
+  color: #666;
+  border-radius: 20px;
+  /* margin-right: 10px;
+  margin-bottom: 10px; */
+  cursor: pointer;
+}
+
+.item.selected {
+  background-color: #07c160;
+  color: #fff;
+}
+
+/* 文件列表样式 */
+.file-list {
+  height: 60%;
+  border: 1px solid #eee;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.header {
+  display: flex;
+  color: #211e1e;
+  font-weight: bold;
+}
+
+.cell {
+  flex: 1;
+  text-align: center;
+  padding: 5px;
+  width: 160rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.content{
+  height: 100%;
+  overflow-y: auto;
+}
+.item {
+  display: flex;
+}
+
+.download-btn {
+  width: 92rpx !important;
+  background-color: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  width: 92rpx !important;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 5px;
+  cursor: pointer;
+}
+
+/* 上传文件样式 */
+.upload-section {
+  border: 1px solid #eee;
+  padding: 10px;
+  text-align: center;
+}
+
+.input-group {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.upload-btn {
+  width: 180rpx !important;
+  background-color: #007aff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.file-info {
+  margin-left: 10px;
+  text-align: left;
+  flex-grow: 1;
+  width: 100rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.submit-btn{
+  width: 100%;
+  background-color: #07c160;
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 4px;
+}

@@ -1,0 +1,74 @@
+
+.search {
+  margin-bottom: 20px;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+.list-wrapper {
+  width: 100%;
+  overflow-y: auto;
+  height: 70%;
+  margin-bottom: 20rpx;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.text {
+  font-size: 14px;
+  color: #333;
+}
+
+.delete-btn {
+  width: 155rpx !important;
+  font-size: 14px;
+  color: #fff;
+  background-color: #f00;
+}
+.update-btn {
+  width: 155rpx !important;
+  font-size: 14px;
+  color: #fff;
+  background-color: #007aff;
+}
+
+.add-btn {
+  width: 100%;
+  background-color: #07c160;
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+  border-radius: 4px;
+}
+.btn-box{
+  display: flex;
+}
+
+.mask{ position: absolute; left: 0; right: 0; top: 0; bottom: 0; display: flex; justify-content: center; align-items: center; background-color: rgba(0,0,0,0.4); z-index: 9999;
+} .modal-content{ display: flex; flex-direction: column; width: 90%;background-color: #fff; border-radius: 10rpx;
+} .modal-btn-wrapper{ display: flex; flex-direction: row; height: 100rpx; line-height: 100rpx; border-top: 2rpx solid rgba(7,17,27,0.1);
+} .cancel-btn, .confirm-btn{ flex: 1; height: 100rpx; line-height: 100rpx; text-align: center; font-size: 32rpx;
+} .cancel-btn{ border-right: 2rpx solid rgba(7,17,27,0.1);
+} .main-content{ flex: 1; height: 100%; overflow-y: hidden;padding: 20rpx;
+}
+.from-box{
+  display: flex;
+    margin: 20rpx 0;
+}
+.weui-input{
+  border: 1px solid #ccc3c3;
+  padding: 10rpx;
+  border-radius: 15rpx;
+}

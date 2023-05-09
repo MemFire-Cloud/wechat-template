@@ -1,0 +1,40 @@
+<view class="container">
+  <view class="main-chat">
+    <view class="msg-items" style="display:flex;flex-direction: column;">
+      <!-- 每条信息 -->
+      <view class="msg-box {{item.user_id == userInfo.id ? 'r-re':''}}" wx:for="{{messages}}" wx:key="{{item.id}}">
+      <image  class="{{item.user_id == userInfo.id ? 'sj':'osj'}}"  src="{{item.imgUrl}}" />
+        <view class="chat-item {{item.user_id == userInfo.id ? 'me':''}}">
+          <view class="clearfix">
+            <view class="avatar">
+              {{ item.user_name }}
+            </view>
+            <view class="msg-bubble-box">
+              <view class="msg-bubble-area clearfix">
+                <view class="msg-bubble {{item.user_id == userInfo.id ? '':'other-bubble'}}">
+                  <view class="text">{{item.message}}</view>
+                </view>
+              </view>
+              <view class="time">{{item.created_at}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="send-msg-box-wrapper">
+      <view class="send-msg-box">
+        <view class="input-area">
+          <input type="text" class="msg-content" bindinput='addmessage' bindconfirm="send" value="{{inputTxt}}" />
+        </view>
+        <view class="btn-area">
+          <image src="/images/send.png" bindtap="send" class="plus-icon" alt=""/>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  
+</view>
+
+

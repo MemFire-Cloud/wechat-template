@@ -1,0 +1,44 @@
+<view class="container">
+  <view class="search">
+    <input class="input" bindconfirm="handerSearch" bindinput="search" type="text" maxlength="20" placeholder="搜索" />
+  </view>
+
+  <view class="list-wrapper">
+    <view class="header">
+      <view class="item">
+        <text class="text">待办事项</text>
+        <text class="text">是否完成</text>
+        <text class="text">操作</text>
+      </view>
+    </view>
+    <view class="item" wx:for="{{todoList}}" wx:key="id">
+      <text class="text">{{item.todo}}</text>
+      <text class="text">{{item.completed ? '完成' : '未完成'}}</text>
+      <view class="btn-box">
+        <button class="delete-btn" type="warn" data-id="{{item.id}}" bindtap="deleteItem">删除</button>
+        <button class="update-btn" type="default" data-item="{{item}}" bindtap="updateItem">编辑</button>
+      </view>
+
+    </view>
+  </view>
+
+  <button class="add-btn" bindtap="addItem">添加</button>
+  <view class='mask' wx:if="{{showModal}}">
+    <view class='modal-content'>
+      <scroll-view scroll-y class='main-content'>
+      <view class="from-box">
+      <lable>待办事项：</lable>
+      <input class="weui-input" value="{{inputValue}}"  maxlength="10" bindinput="handerTodo" placeholder="请输入"/>
+      </view>
+      <view>
+      <lable>是否完成 :</lable>
+      <switch checked="{{completeCheck}}" bindchange="handerComplete"/>
+      </view>
+      </scroll-view>
+      <view class='modal-btn-wrapper'>
+        <view class='cancel-btn' style='color:rgba(7,17,27,0.6)' bindtap='cancel'>取消</view>
+        <view class='confirm-btn' style='color:#13b5f5' bindtap='confirm'>确定</view>
+      </view>
+    </view>
+  </view>
+</view>

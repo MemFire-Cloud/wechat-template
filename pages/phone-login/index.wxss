@@ -1,0 +1,28 @@
+.inputView { 
+  line-height: 90rpx; 
+  border-bottom:1rpx solid #999999;
+ } 
+
+.inputText { 
+  display: inline-block; 
+  line-height: 90rpx; 
+  padding-left: 20rpx; 
+  margin-top: 22rpx;
+  color: #1f1e1e; 
+  font-size: 28rpx;
+ } 
+  
+ .line {
+  border: 1rpx solid #ccc;
+  border-radius: 40rpx; 
+  float: right; 
+  margin-top: 18rpx;
+  /* color: #cccccc !important; */
+ } 
+ .disabled{
+  color: #cccccc !important; 
+ }
+ .loginBtn { 
+  border-radius:10rpx;
+  width: 100% !important;
+ }

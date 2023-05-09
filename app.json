@@ -1,0 +1,37 @@
+{
+  "pages": [
+    "pages/login/index",
+    "pages/index/index",
+    "pages/phone-login/index",
+    "pages/logs/logs",
+    "pages/me/index",
+    "pages/messages/index",
+    "pages/userinfo/index",
+    "pages/todo/index",
+    "pages/filestorage/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index_off.png",
+        "selectedIconPath": "images/index_on.png"
+      },
+      {
+        "pagePath": "pages/me/index",
+        "text": "我的",
+        "iconPath": "images/mine_off.png",
+        "selectedIconPath": "images/mine_on.png"
+      }
+    ]
+  }
+}
