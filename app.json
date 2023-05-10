@@ -3,7 +3,6 @@
     "pages/login/index",
     "pages/index/index",
     "pages/phone-login/index",
-    "pages/logs/logs",
     "pages/me/index",
     "pages/messages/index",
     "pages/userinfo/index",

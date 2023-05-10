@@ -214,24 +214,6 @@ Page({
         }
       }
     })
-    // wx.downloadFile({
-    //   url: data.signedUrl,
-    //   success (res) {
-    //     if (res.statusCode === 200) {
-    //     const filePath = res.tempFilePath
-    //       wx.openDocument({
-    //         filePath: filePath,
-    //         showMenu:true, //关键点
-    //         success: function (res) {
-    //           console.log('打开文档成功')
-    //         }
-    //       })
-    //     }
-    //   },
-    //   fail:function(err){
-    //   }
-    // })
-
   },
   async removeFile(e) {
     const name = e.currentTarget.dataset.name;
