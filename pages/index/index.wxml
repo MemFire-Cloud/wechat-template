@@ -1,4 +1,4 @@
-<!-- <view class="container"> -->
+
   <view class="list-menu">
     <navigator class="menu-item" url="../todo/index">
       <view class="menu-text">todoList</view>
@@ -13,4 +13,3 @@
       <image src="/images/right.png" class="menu-icon"></image>
     </navigator>
   </view>
-<!-- </view> -->

@@ -50,7 +50,7 @@ Page({
     })
   },
   phoneLogin(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '/pages/phone-login/index',
     })
   }

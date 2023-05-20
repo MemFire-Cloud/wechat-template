@@ -86,7 +86,7 @@ Page({
           title: '登录成功,前往修改个人信息页面',
           duration: 1500
         });
-        wx.switchTab({
+        wx.redirectTo({
           url: '/pages/userinfo/index',
         })
       }else{

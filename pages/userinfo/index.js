@@ -3,9 +3,9 @@ import { DownloadImage } from '../../utils/commonApi'
 const app = getApp();
 Page({
   data: {
-    username: app.globalData.userInfo?.user_metadata.username ? app.globalData.userInfo.user_metadata.username : '',
-    avatar: app.globalData.userInfo?.user_metadata.avatar ? app.globalData.userInfo.user_metadata.avatar : '',
-    introduction: app.globalData.userInfo?.user_metadata.introduction ? app.globalData.userInfo.user_metadata.introduction : '',
+    username: '',
+    avatar: '',
+    introduction: '',
     filePath:'',
   },
    onLoad: async function () {
