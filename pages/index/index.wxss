@@ -1,30 +1,16 @@
-.list-menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 400rpx;
-}
 
-.menu-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 120rpx;
-  background-color: #fff;
-  border-bottom: 1rpx solid #f5f5f5;
-}
 
-.menu-icon {
-  width: 60rpx;
-  height: 60rpx;
-}
 
-.menu-text {
-  font-size: 32rpx;
-  color: #333;
-  margin-left: 40rpx;
+.banner-box {
+  color: #6d7278;
+  font-size: 48rpx;
+  width: 670rpx;
+  height: 240rpx;
+  box-shadow: 0px 2px 10px 4px rgba(213, 221, 239, 0.3);
+  border-radius: 20rpx;
+  line-height: 120px;
+  text-align: center;
+}
+.mt40{
+  margin-top: 40rpx;
 }

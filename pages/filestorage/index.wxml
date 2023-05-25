@@ -1,38 +1,74 @@
-<view class="container">
-  <view class="category">
-    <view class="title">文件分类</view>
-    <view class="list">
-      <view class="item {{activeItem  === item.id ? 'selected':''}}" bindtap="handertab" data-id="{{item.id}}" wx:key="item" wx:for="{{btnList}}">{{item.name}}</view>
-    </view>
-  </view>
-  
-  <view class="file-list">
-    <view class="header">
-      <view class="cell">文件名</view>
-      <view class="cell">大小</view>
-      <view class="cell">上传时间</view>
-      <view class="cell">操作</view>
-    </view>
-    <view class="content">
-      <view class="item" wx:for="{{fileList}}" wx:key="id">
-      <view class="cell">{{item.name}}</view>
-      <view class="cell">{{item.size}}</view>
-      <view class="cell">{{item.created_at}}</view>
-      <view class="cell">
-        <button class="download-btn" type="default"  data-name="{{item.name}}" bindtap="downloadFile">下载</button>
-        <button class="delete-btn" type="warn" bindtap="removeFile" data-name="{{item.name}}">删除</button>
+<view>
+  <van-tabs swipeable line-width="90" title-active-color="#e25613"  bind:change="onChangeTab">
+    <van-tab title="全部" name="全部">
+      <view class="f-ab border-bottom" wx:for="{{fileList}}" wx:key="id" bindtap="onOpenPop" data-name="{{item.name}}">
+        <view class="item-box">
+          <image src="../../images/file.svg"></image>
+          <view class="content-box">
+            <text class="cell">{{item.name}}</text>
+            <text class="t-s mt-10">{{item.size}}</text>
+          </view>
+        </view>
+        <view class="t-s">
+          {{item.created_at}}
+        </view>
       </view>
+    </van-tab>
+    <van-tab title="图片"  name="图片">
+      <view class="f-ab border-bottom" wx:for="{{fileList}}" wx:key="id" bindtap="onOpenPop" data-name="{{item.name}}">
+        <view class="item-box">
+          <image src="../../images/image.svg"></image>
+          <view class="content-box">
+            <text class="cell">{{item.name}}</text>
+            <text class="t-s mt-10">{{item.size}}</text>
+          </view>
+        </view>
+        <view class="t-s">
+          {{item.created_at}}
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="文档"  name="文档">
+      <view class="f-ab border-bottom" wx:for="{{fileList}}" wx:key="id" bindtap="onOpenPop" data-name="{{item.name}}">
+        <view class="item-box">
+          <image src="../../images/file.svg"></image>
+          <view class="content-box">
+            <text class="cell">{{item.name}}</text>
+            <text class="t-s mt-10">{{item.size}}</text>
+          </view>
+        </view>
+        <view class="t-s">
+          {{item.created_at}}
+        </view>
+      </view>
+    </van-tab>
+    <van-tab title="视频" name="视频">
+      <view class="f-ab border-bottom" wx:for="{{fileList}}" wx:key="id" bindtap="onOpenPop" data-name="{{item.name}}">
+        <view class="item-box">
+          <image src="../../images/vadio.svg"></image>
+          <view class="content-box">
+            <text class="cell">{{item.name}}</text>
+            <text class="t-s mt-10">{{item.size}}</text>
+          </view>
+        </view>
+        <view class="t-s">
+          {{item.created_at}}
+        </view>
+      </view>
+    </van-tab>
+  </van-tabs>
+
+  <view class="container2"> 
+     <button class="add-btn" bindtap="onUpload">上传</button>
     </view>
-    </view>
-    
-    <!-- 其他文件... -->
-  </view>
-  
-  <view class="upload-section">
-    <view class="title">上传文件</view>
-    <view class="input-group">
-      <button class="upload-btn" type="primary" bindtap="onUpload">选择文件</button>
-      <view class="file-info">{{fileName ? fileName : '未选择图片'}}</view>
-    </view>
-  </view>
+    <van-popup
+    show="{{ show }}"
+    position="bottom"
+    custom-style="height: 30%;"
+    bind:close="onClosePop"
+  >
+  <view class="pop-btn" bindtap="downloadFile" >下载</view>
+  <view class="pop-btn err-color" bindtap="removeFile">删除</view>
+  <view class="pop-cansel" bindtap="onClosePop">取消</view>
+</van-popup>
 </view>

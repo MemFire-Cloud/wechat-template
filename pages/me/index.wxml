@@ -13,9 +13,27 @@
       </view>
     </block>
   </view>
+  <image class="active-img" src="../../images/group_assist.jpeg" bindtap="previewImage"  show-menu-by-longpress="true"  />
 
   <view class="list-wrapper"  wx:if="{{hasUserInfo}}">
-    <block wx:for="{{menuitems}}" wx:key="item">
+    <navigator url="../userinfo/index">
+    <view class="row m32 mt64"  bindtap="goUserInfo">
+      <view class="left-t t34">基本信息</view>
+      <view class="right-t">
+        <image src="../../images/arrow.svg" />
+      </view>
+    </view>
+  </navigator>
+
+    <view class="row m32 mt64"  bindtap="loginOut">
+      <view class="left-t t34">退出登录</view>
+      <view class="right-t">
+        <image src="../../images/arrow.svg" />
+      </view>
+    </view>
+
+
+    <!-- <block wx:for="{{menuitems}}" wx:key="item">
       <navigator url="{{item.url}}" class="list-item" hover-class="list-item_active">
         <view class='item'>
           <image class='item-image' src='../../images/icon-index.png'></image>
@@ -32,5 +50,5 @@
         </view>
         <view class="div-line"></view>
       </view>
-    </block>
+    </block> -->
   </view>

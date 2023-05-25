@@ -1,0 +1,6 @@
+<view class="section">
+  <textarea placeholder="请输入内容" value="{{todoInfo.todo}}" auto-focus bindinput="todoinput" />
+
+  <button class="add-btn" bindtap="addItem">确定</button>
+</view>
+

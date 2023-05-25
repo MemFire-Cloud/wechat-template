@@ -1,15 +1,19 @@
 
-  <view class="list-menu">
-    <navigator class="menu-item" url="../todo/index">
-      <view class="menu-text">todoList</view>
-      <image src="/images/right.png" class="menu-icon"></image>
-    </navigator>
-    <navigator class="menu-item" url="../filestorage/index">
-      <view class="menu-text">网盘</view>
-      <image src="/images/right.png" class="menu-icon"></image>
-    </navigator>
-    <navigator class="menu-item" url='../messages/index'>
-      <view class="menu-text">聊天室</view>
-      <image src="/images/right.png" class="menu-icon"></image>
+
+<view class="container2">
+  <text class="top-banner">模板集</text>
+  <view class="wall-box mt40">
+      <view class="banner-box" bindtap="goTodo"> ToDoList </view>
+  </view>
+  <view class="wall-box mt40">
+      <view class="banner-box" bindtap="goRoom"> 聊天室 </view>
+  </view>
+  <view class="wall-box mt40">
+      <view class="banner-box" bindtap="goFile"> 网盘 </view>
+  </view>
+  <view class="wall-box mt40">
+    <navigator class="menu-item" url="../login/index">
+      <view class="banner-box"> 登录认证 </view>
     </navigator>
   </view>
+</view>

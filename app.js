@@ -10,9 +10,6 @@ App({
         throw error
       } else {
         this.globalData.userInfo = user.data;
-        wx.switchTab({
-          url: '/pages/index/index',
-        })
       }
     } catch (error) {
       throw error.message || error.error_description

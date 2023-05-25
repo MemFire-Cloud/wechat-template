@@ -9,11 +9,8 @@ Page({
   data: {
     fileName: '',
     fileList: [],
-    btnList: [{ name: '全部', id: 0 },
-    { name: '图片', id: 1 },
-    { name: '文档', id: 2 },
-    { name: '视频', id: 3 }],
-    activeItem: 0
+    show:false,
+    itemFileName:''
   },
 
   /**
@@ -36,8 +33,14 @@ Page({
   onShow: function () {
 
   },
-  async handertab(e) {
-    this.setData({ activeItem: e.currentTarget.dataset.id });
+  onClosePop(){
+    this.setData({ show: false });
+  },
+  onOpenPop(e){
+    this.setData({ show: true,itemFileName: e.currentTarget.dataset.name});
+  },
+  async onChangeTab(e) {
+    const name = e.detail.name;
     const { data: { data }, error } = await supabase
       .storage.from('files')
       .list()
@@ -48,28 +51,28 @@ Page({
       if (data.length > 0) {
         data.map((item, index) => {
           // .doc,.xml,.docx,
-          if (this.data.btnList[this.data.activeItem].name === '文档') {
+          if (name === '文档') {
             if (item.name.slice(item.name.lastIndexOf('.') + 1) === 'doc' || item.name.slice(item.name.lastIndexOf('.') + 1) === 'xml' || item.name.slice(item.name.lastIndexOf('.') + 1) === 'docx') {
               item.created_at = formatTime(item.created_at)
               item.size = item.metadata.size;
               delete item.metadata;
               res.push(item)
             }
-          } else if (this.data.btnList[this.data.activeItem].name === '图片') {
+          } else if (name === '图片') {
             if (item.name.slice(item.name.lastIndexOf('.') + 1) === 'jpg' || item.name.slice(item.name.lastIndexOf('.') + 1) === 'png') {
               item.created_at = formatTime(item.created_at)
               item.size = item.metadata.size;
               delete item.metadata;
               res.push(item)
             }
-          } else if (this.data.btnList[this.data.activeItem].name === '视频') {
+          } else if (name === '视频') {
             if (item.name.slice(item.name.lastIndexOf('.') + 1) === 'mp4') {
               item.created_at = formatTime(item.created_at)
               item.size = item.metadata.size;
               delete item.metadata;
               res.push(item)
             }
-          } else if (this.data.btnList[this.data.activeItem].name === '全部') {
+          } else if (name === '全部') {
             item.created_at = formatTime(item.created_at)
             item.size = item.metadata.size;
             delete item.metadata;
@@ -100,7 +103,7 @@ Page({
           })
         if (error) {
           wx.showToast({
-            title: error.message || error.error_description,
+            title: error.data.message || error.data.error_description,
             icon: "none",
             duration: 2000
           })
@@ -121,7 +124,7 @@ Page({
       .list()
     if (error) {
       wx.showToast({
-        title: error.message || error.error_description,
+        title: error.data.message || error.data.error_description,
         icon: "none",
         duration: 2000
       })
@@ -136,8 +139,8 @@ Page({
       this.setData({ fileList: data })
     }
   },
-  async downloadFile(e) {
-    const name = e.currentTarget.dataset.name;
+  async downloadFile() {
+    const name = this.data.itemFileName;
     const { data, error } = await supabase
       .storage
       .from('files')
@@ -215,14 +218,14 @@ Page({
       }
     })
   },
-  async removeFile(e) {
-    const name = e.currentTarget.dataset.name;
+  async removeFile() {
+    const name = this.data.itemFileName;
     const { data, error } = await supabase
       .storage.from('files')
       .remove(name)
     if (error) {
       wx.showToast({
-        title: error.message || error.error_description,
+        title: error.data.message || error.data.error_description,
         icon: "none",
         duration: 2000
       })
@@ -233,6 +236,7 @@ Page({
         duration: 2000
       })
       this.ListFile()
+      this.setData({ show: false });
     }
   },
 })

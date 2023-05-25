@@ -19,7 +19,6 @@
   color: #fff;
   border: none;
   border-radius: 10rpx;
-  padding: 20rpx 10rpx;
   margin-bottom: 30rpx;
 }
 
@@ -29,5 +28,4 @@
   color: #1aad19;
   border: 1px solid #1aad19;
   border-radius: 10rpx;
-  padding: 20rpx 10rpx;
 }

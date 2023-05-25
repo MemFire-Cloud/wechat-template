@@ -1,9 +1,48 @@
 /**app.wxss**/
 .container {
+  padding: 0 20rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: #F5F5F5;
+}
+
+.container2 {
+  margin: 30rpx 32rpx;
+}
+.top-banner {
+  font-size: 40rpx;
+  color: #000000;
+  margin-bottom: 40rpx;
+}
+.p-r{
+  position: relative;
+}
+.f-ab{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14rpx 32rpx;
+}
+.mt-10{
+  margin-top: 10rpx;
+}
+.add-btn {
+  background-color: #f7f7f7;
+  text-align: center;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  color: #07c160;
+  width: 350rpx;
+  position: fixed;
+  bottom: 90rpx;
+  transform: translate(50%,50%);
+}
+button::after{
+  border:none
+}
+.m-t-324{
+  margin-top: -325rpx;
 }

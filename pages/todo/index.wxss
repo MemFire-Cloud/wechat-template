@@ -1,6 +1,6 @@
 
 .search {
-  margin-bottom: 20px;
+  margin: 20rpx -20rpx;
 }
 
 .input {
@@ -44,14 +44,6 @@
   background-color: #007aff;
 }
 
-.add-btn {
-  width: 100%;
-  background-color: #07c160;
-  text-align: center;
-  color: #fff;
-  padding: 10px 0;
-  border-radius: 4px;
-}
 .btn-box{
   display: flex;
 }
@@ -71,4 +63,34 @@
   border: 1px solid #ccc3c3;
   padding: 10rpx;
   border-radius: 15rpx;
+}
+.van-swipe-cell__right {
+  display: inline-block;
+  width: 65px;
+  height: 44px;
+  font-size: 15px;
+  line-height: 44px;
+  color: #fff;
+  text-align: center;
+  background-color: #f44;
+}
+.left-radio{
+  position: absolute;
+  left: 10rpx;
+}
+.van-cell__title{
+  margin-left: 48rpx;
+  font-size: 32rpx;
+}
+.left-title{
+  font-size: 28rpx;
+  color: #818484;
+  margin-bottom: 15rpx;
+}
+.m-t36{
+  margin-top: 36rpx;
+}
+.line-through .van-cell__title{
+  text-decoration: line-through;
+  color: #8e8e8e;
 }

@@ -1,0 +1,6 @@
+.section{
+  padding: 20rpx;
+}
+.section textarea{
+  width: 100%;
+}

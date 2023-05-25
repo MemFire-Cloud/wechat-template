@@ -1,6 +1,6 @@
 .inputView { 
   line-height: 90rpx; 
-  border-bottom:1rpx solid #999999;
+  border-bottom:1rpx solid #f1ecec;
  } 
 
 .inputText { 

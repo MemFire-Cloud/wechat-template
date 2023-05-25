@@ -1,14 +1,20 @@
 <view class="container">
-  <view class="user-info">
+  <view class="user-info m-t-324">
     <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
     <text wx:if="{{!avatar}}">点我获取头像</text>
     <image wx:else class="avatar" src="{{avatar}}"></image>
   </button> 
     <input class="username" placeholder="请输入用户名" bindinput="updateUsername" value="{{username}}" />
-
   </view>
   <view class="user-intro">
     <textarea class="intro-text" placeholder="请输入个人简介" bindinput="updateIntro" value="{{introduction}}" />
   </view>
-  <button class="submit" bindtap="submit">提交</button>
+  <button class="info-btn" bindtap="submit">提交</button>
+  <view class="footer">
+    <view class="footer__links">
+      <navigator url="https://memfire.com/">了解更多</navigator>
+    </view>
+    <view class="footer__text">Copyright © 2023 MemFire</view>
+  </view>
 </view>
+
