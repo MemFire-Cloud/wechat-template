@@ -34,7 +34,7 @@ Page({
           })
         } else {
           this.setData({
-            todoInfo: data.data[0]
+            todoInfo: data[0]
           })
         }
     }

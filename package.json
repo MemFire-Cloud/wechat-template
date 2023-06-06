@@ -10,6 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "@vant/weapp": "^1.10.19",
-    "supabase-wechat-stable-v2": "^2.0.4"
+    "supabase-wechat-stable-v2": "^2.0.8"
   }
 }

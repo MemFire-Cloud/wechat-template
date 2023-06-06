@@ -5,27 +5,36 @@
   </view>
   <view>
     <view class="left-title">未完成</view>
-    <van-swipe-cell bind:click="onOpenTodo" wx:for="{{todoList}}" wx:key="id" data-id="{{item.id}}"  right-width="{{ 65 }}">
-      <van-cell-group wx:if="{{!item.completed}}">
-        <van-cell class="p-r" title="{{item.todo}}" is-link>
-          <radio-group class="left-radio" data-id="{{item.id}}" bindchange="radioChange">
-            <radio checked="{{item.completed}}" />
-          </radio-group>
-        </van-cell>
-      </van-cell-group>
-      <view slot="right" class="van-swipe-cell__right" bindtap="deleteItem" data-id="{{item.id}}" >删除</view>
-    </van-swipe-cell>
+    <view class="max-hight">
+      <van-swipe-cell bind:click="onOpenTodo" wx:for="{{todoList}}" wx:key="id" data-id="{{item.id}}"  right-width="{{ 65 }}">
+        <van-cell-group wx:if="{{!item.completed}}">
+          <van-cell class="p-r" title="{{item.todo}}" is-link>
+            <radio-group class="left-radio" data-id="{{item.id}}" bindchange="radioChange">
+              <view catchtap="nofunction">
+                <radio checked="{{item.completed}}" />
+              </view>
+            </radio-group>
+          </van-cell>
+        </van-cell-group>
+        <view slot="right" class="van-swipe-cell__right" catchtap="deleteItem" data-id="{{item.id}}" >删除</view>
+      </van-swipe-cell> 
+    </view>
+
     <view class="left-title m-t36">已完成</view>
+    <view class="max-hight">
     <van-swipe-cell id="swipe-cell" bind:click="onOpenTodo"  data-id="{{item.id}}" wx:for="{{todoList}}" wx:key="id" right-width="{{ 65 }}">
       <van-cell-group wx:if="{{item.completed}}">
         <van-cell class="p-r line-through" title="{{item.todo}}" is-link>
-          <radio-group class="left-radio">
-            <radio checked="true" disabled/>
-          </radio-group>
+            <radio-group class="left-radio" data-id="{{item.id}}" catchtap="radioChangeUp">
+              <view catchtab="nofunction">
+              <radio checked="{{item.completed}}"/>
+            </view>
+            </radio-group>
         </van-cell>
       </van-cell-group>
-      <view slot="right" class="van-swipe-cell__right" data-id="{{item.id}}" bindtap="deleteItem">删除</view>
+      <view slot="right" class="van-swipe-cell__right" data-id="{{item.id}}" catchtap="deleteItem">删除</view>
     </van-swipe-cell>
+  </view>
   </view>
   <button class="add-btn" bindtap="addItem">新建</button>
 </view>

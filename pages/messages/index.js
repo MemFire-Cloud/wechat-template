@@ -87,7 +87,7 @@ Page({
     this.setData({ inputTxt: '' })
   },
   async getInitialMessages() {
-    const { data:{data}, error } = await supabase
+    const { data, error } = await supabase
       .from('messages')
       .select()
     if (error) {

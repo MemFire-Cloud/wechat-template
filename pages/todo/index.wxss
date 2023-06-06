@@ -94,3 +94,7 @@
   text-decoration: line-through;
   color: #8e8e8e;
 }
+.max-hight{
+  max-height: 620rpx;
+  overflow-y: auto;
+}

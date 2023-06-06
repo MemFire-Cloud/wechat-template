@@ -36,6 +36,18 @@ Page({
       .eq('id', itemId)
       this.fetchTodo()
   },
+  async radioChangeUp(e) {
+    const itemId = e.currentTarget.dataset.id;
+    const {
+      error
+    } = await supabase
+      .from('todo_list')
+      .update({
+        completed: false
+      })
+      .eq('id', itemId)
+      this.fetchTodo()
+  },
   async handerSearch() {
     const {
       data,
@@ -78,7 +90,7 @@ Page({
       })
     } else {
       that.setData({
-        todoList: data.data
+        todoList: data
       })
     }
   },
@@ -110,5 +122,6 @@ Page({
     wx.navigateTo({
       url: '/pages/addTodo/index?id='+itemId,
     })
-  }
+  },
+  nofunction(){}
 });

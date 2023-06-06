@@ -13,7 +13,7 @@
       </view>
     </block>
   </view>
-  <image class="active-img" src="../../images/group_assist.jpeg" bindtap="previewImage"  show-menu-by-longpress="true"  />
+  <image class="active-img" src="../../images/group_assist.jpeg" bindtap="previewImage" data-src="../../images/group_assist.jpeg"  show-menu-by-longpress="true"  />
 
   <view class="list-wrapper"  wx:if="{{hasUserInfo}}">
     <navigator url="../userinfo/index">
@@ -31,24 +31,4 @@
         <image src="../../images/arrow.svg" />
       </view>
     </view>
-
-
-    <!-- <block wx:for="{{menuitems}}" wx:key="item">
-      <navigator url="{{item.url}}" class="list-item" hover-class="list-item_active">
-        <view class='item'>
-          <image class='item-image' src='../../images/icon-index.png'></image>
-          <text class="item-text">{{item.text}}</text>
-          <text class='item-array'>></text>
-        </view>
-        <view class="div-line"></view>
-      </navigator>
-      <view bindtap="loginOut" class="list-item" hover-class="list-item_active">
-        <view class='item'>
-          <image class='item-image' src='../../images/icon-loginout.png'></image>
-          <text class="item-text">退出登录</text>
-          <text class='item-array'>></text>
-        </view>
-        <view class="div-line"></view>
-      </view>
-    </block> -->
   </view>

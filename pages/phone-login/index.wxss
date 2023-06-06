@@ -2,7 +2,9 @@
   line-height: 90rpx; 
   border-bottom:1rpx solid #f1ecec;
  } 
-
+.from-content{
+  width: 98%;
+}
 .inputText { 
   display: inline-block; 
   line-height: 90rpx; 
@@ -25,4 +27,5 @@
  .loginBtn { 
   border-radius:10rpx;
   width: 100% !important;
+  margin-top: 20rpx;
  }

@@ -1,15 +1,12 @@
 <!--pages/phone/phone.wxml-->
 <view class="container">
-  <form catchsubmit="login">
-    <view class="inputView">
-      <input class="inputText" value="{{phone}}" placeholder="请输入手机号" name="phone" bindblur="phone" />
-    </view>
-    <view class="inputView">
-      <input class="inputText" bindblur="code" value="{{code}}" placeholder="请输入验证码" name="code" />
-      <button class="line {{disabled?'disabled':''}}"  type="{{disabled?'defalut':'primary'}}" disabled="{{disabled}}" size="mini" bindtap="sendcode">{{codebtn}}</button>
-      </view>
-    <view class="loginBtnView">
-      <button class="loginBtn" type="primary" formType="submit">登录</button>
-    </view>
-  </form>
+  <form catchsubmit="login"  class="from-content">
+    <view class="inputView"><input class="inputText" value="{{phone}}" placeholder="请输入手机号" name="phone"
+        bindblur="phone" /></view>
+    <view class="inputView"><input class="inputText" bindblur="code" value="{{code}}" placeholder="请输入验证码"
+        name="code" /><button class="line {{disabled?'disabled':''}}" type="{{disabled?'defalut':'primary'}}"
+        disabled="{{disabled}}" size="mini" bindtap="sendcode">{{codebtn}}</button>
+            </view>
+    <view class="loginBtnView"><button class="loginBtn" type="primary" formType="submit">登录</button></view>
+  </form>
 </view>
