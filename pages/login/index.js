@@ -16,7 +16,7 @@ Page({
             duration: 2000
           })
         }else if(data){
-          if(JSON.stringify(data.user.data.user.user_metadata) === "{}"){
+          if(JSON.stringify(data.user.user_metadata) === "{}"){
             setTimeout(() => {
               wx.showModal({
                 title: '提示',
@@ -32,7 +32,7 @@ Page({
               })
             }, 1000);
           }else {
-            app.globalData.userInfo = data.user.data.user;
+            app.globalData.userInfo = data.user;
             wx.switchTab({
               url:'/pages/index/index'
             })
